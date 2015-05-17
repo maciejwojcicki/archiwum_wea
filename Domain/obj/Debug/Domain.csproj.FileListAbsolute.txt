@@ -1,0 +1,9 @@
+d:\visual studio 2013\Projects\WebArchiwum\Domain\bin\Debug\Domain.dll
+d:\visual studio 2013\Projects\WebArchiwum\Domain\bin\Debug\Domain.pdb
+d:\visual studio 2013\Projects\WebArchiwum\Domain\obj\Debug\Domain.dll
+d:\visual studio 2013\Projects\WebArchiwum\Domain\obj\Debug\Domain.pdb
+d:\visual studio 2013\Projects\WebArchiwum\Domain\bin\Debug\Domain.dll.config
+d:\visual studio 2013\Projects\WebArchiwum\Domain\bin\Debug\EntityFramework.dll
+d:\visual studio 2013\Projects\WebArchiwum\Domain\bin\Debug\EntityFramework.SqlServer.dll
+d:\visual studio 2013\Projects\WebArchiwum\Domain\bin\Debug\EntityFramework.xml
+d:\visual studio 2013\Projects\WebArchiwum\Domain\bin\Debug\EntityFramework.SqlServer.xml
