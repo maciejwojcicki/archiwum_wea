@@ -9,6 +9,8 @@
 
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
 
     
 </head>
@@ -22,8 +24,7 @@
     <footer>
         <p>&copy; @DateTime.Now.Year - Qnet ASP.NET Application</p>
     </footer>
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    
     @RenderSection("scripts", required: false)
 </body>
 </html>
