@@ -16,5 +16,6 @@ namespace Domain.Entities
         [Required]
         [RegularExpression(@"[a-zA-Z0-9]{6,}")]
         public string Password { get; set; }
+        public string Email { get; set; }
     }
 }

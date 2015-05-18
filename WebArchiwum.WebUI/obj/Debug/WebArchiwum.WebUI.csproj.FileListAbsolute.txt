@@ -34,3 +34,33 @@ d:\visual studio 2013\Projects\WebArchiwum\WebArchiwum.WebUI\bin\System.Web.WebP
 d:\visual studio 2013\Projects\WebArchiwum\WebArchiwum.WebUI\obj\Debug\WebArchiwum.WebUI.csprojResolveAssemblyReference.cache
 d:\visual studio 2013\Projects\WebArchiwum\WebArchiwum.WebUI\obj\Debug\WebArchiwum.WebUI.dll
 d:\visual studio 2013\Projects\WebArchiwum\WebArchiwum.WebUI\obj\Debug\WebArchiwum.WebUI.pdb
+D:\Projekty\archiwum_wea\WebArchiwum.WebUI\obj\Debug\WebArchiwum.WebUI.csprojResolveAssemblyReference.cache
+D:\Projekty\archiwum_wea\WebArchiwum.WebUI\obj\Debug\WebArchiwum.WebUI.dll
+D:\Projekty\archiwum_wea\WebArchiwum.WebUI\bin\WebArchiwum.WebUI.dll.config
+D:\Projekty\archiwum_wea\WebArchiwum.WebUI\bin\WebArchiwum.WebUI.dll
+D:\Projekty\archiwum_wea\WebArchiwum.WebUI\bin\WebArchiwum.WebUI.pdb
+D:\Projekty\archiwum_wea\WebArchiwum.WebUI\bin\Antlr3.Runtime.dll
+D:\Projekty\archiwum_wea\WebArchiwum.WebUI\bin\Domain.dll
+D:\Projekty\archiwum_wea\WebArchiwum.WebUI\bin\EntityFramework.dll
+D:\Projekty\archiwum_wea\WebArchiwum.WebUI\bin\EntityFramework.SqlServer.dll
+D:\Projekty\archiwum_wea\WebArchiwum.WebUI\bin\Microsoft.Web.Infrastructure.dll
+D:\Projekty\archiwum_wea\WebArchiwum.WebUI\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\Projekty\archiwum_wea\WebArchiwum.WebUI\bin\Newtonsoft.Json.dll
+D:\Projekty\archiwum_wea\WebArchiwum.WebUI\bin\System.Web.Mvc.dll
+D:\Projekty\archiwum_wea\WebArchiwum.WebUI\bin\System.Web.Optimization.dll
+D:\Projekty\archiwum_wea\WebArchiwum.WebUI\bin\System.Web.Providers.dll
+D:\Projekty\archiwum_wea\WebArchiwum.WebUI\bin\System.Web.Razor.dll
+D:\Projekty\archiwum_wea\WebArchiwum.WebUI\bin\System.Web.WebPages.Deployment.dll
+D:\Projekty\archiwum_wea\WebArchiwum.WebUI\bin\System.Web.WebPages.dll
+D:\Projekty\archiwum_wea\WebArchiwum.WebUI\bin\System.Web.WebPages.Razor.dll
+D:\Projekty\archiwum_wea\WebArchiwum.WebUI\bin\WebGrease.dll
+D:\Projekty\archiwum_wea\WebArchiwum.WebUI\bin\Domain.pdb
+D:\Projekty\archiwum_wea\WebArchiwum.WebUI\bin\EntityFramework.xml
+D:\Projekty\archiwum_wea\WebArchiwum.WebUI\bin\EntityFramework.SqlServer.xml
+D:\Projekty\archiwum_wea\WebArchiwum.WebUI\bin\Newtonsoft.Json.xml
+D:\Projekty\archiwum_wea\WebArchiwum.WebUI\bin\System.Web.Mvc.xml
+D:\Projekty\archiwum_wea\WebArchiwum.WebUI\bin\System.Web.Razor.xml
+D:\Projekty\archiwum_wea\WebArchiwum.WebUI\bin\System.Web.WebPages.xml
+D:\Projekty\archiwum_wea\WebArchiwum.WebUI\bin\System.Web.WebPages.Deployment.xml
+D:\Projekty\archiwum_wea\WebArchiwum.WebUI\bin\System.Web.WebPages.Razor.xml
+D:\Projekty\archiwum_wea\WebArchiwum.WebUI\obj\Debug\WebArchiwum.WebUI.pdb
