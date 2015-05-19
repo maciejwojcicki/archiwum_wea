@@ -7,7 +7,6 @@ d:\visual studio 2013\Projects\WebArchiwum\Domain\bin\Debug\EntityFramework.dll
 d:\visual studio 2013\Projects\WebArchiwum\Domain\bin\Debug\EntityFramework.SqlServer.dll
 d:\visual studio 2013\Projects\WebArchiwum\Domain\bin\Debug\EntityFramework.xml
 d:\visual studio 2013\Projects\WebArchiwum\Domain\bin\Debug\EntityFramework.SqlServer.xml
-<<<<<<< HEAD
 D:\Projekty\archiwum_wea\Domain\obj\Debug\Domain.dll
 D:\Projekty\archiwum_wea\Domain\obj\Debug\Domain.pdb
 D:\Projekty\archiwum_wea\Domain\bin\Debug\Domain.dll.config
@@ -17,7 +16,6 @@ D:\Projekty\archiwum_wea\Domain\bin\Debug\EntityFramework.dll
 D:\Projekty\archiwum_wea\Domain\bin\Debug\EntityFramework.SqlServer.dll
 D:\Projekty\archiwum_wea\Domain\bin\Debug\EntityFramework.xml
 D:\Projekty\archiwum_wea\Domain\bin\Debug\EntityFramework.SqlServer.xml
-=======
 E:\Projects\archiwum_wea\Domain\bin\Debug\Domain.dll.config
 E:\Projects\archiwum_wea\Domain\bin\Debug\Domain.dll
 E:\Projects\archiwum_wea\Domain\bin\Debug\Domain.pdb
@@ -28,4 +26,4 @@ E:\Projects\archiwum_wea\Domain\bin\Debug\EntityFramework.SqlServer.xml
 E:\Projects\archiwum_wea\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
 E:\Projects\archiwum_wea\Domain\obj\Debug\Domain.dll
 E:\Projects\archiwum_wea\Domain\obj\Debug\Domain.pdb
->>>>>>> 759f5513b1ea06ea6c0f236f5124ed9ed0c34aa8
+D:\Projekty\archiwum_wea\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
