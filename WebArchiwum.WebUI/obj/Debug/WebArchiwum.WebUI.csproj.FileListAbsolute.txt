@@ -34,6 +34,7 @@ d:\visual studio 2013\Projects\WebArchiwum\WebArchiwum.WebUI\bin\System.Web.WebP
 d:\visual studio 2013\Projects\WebArchiwum\WebArchiwum.WebUI\obj\Debug\WebArchiwum.WebUI.csprojResolveAssemblyReference.cache
 d:\visual studio 2013\Projects\WebArchiwum\WebArchiwum.WebUI\obj\Debug\WebArchiwum.WebUI.dll
 d:\visual studio 2013\Projects\WebArchiwum\WebArchiwum.WebUI\obj\Debug\WebArchiwum.WebUI.pdb
+<<<<<<< HEAD
 D:\Projekty\archiwum_wea\WebArchiwum.WebUI\obj\Debug\WebArchiwum.WebUI.csprojResolveAssemblyReference.cache
 D:\Projekty\archiwum_wea\WebArchiwum.WebUI\obj\Debug\WebArchiwum.WebUI.dll
 D:\Projekty\archiwum_wea\WebArchiwum.WebUI\bin\WebArchiwum.WebUI.dll.config
@@ -64,3 +65,35 @@ D:\Projekty\archiwum_wea\WebArchiwum.WebUI\bin\System.Web.WebPages.xml
 D:\Projekty\archiwum_wea\WebArchiwum.WebUI\bin\System.Web.WebPages.Deployment.xml
 D:\Projekty\archiwum_wea\WebArchiwum.WebUI\bin\System.Web.WebPages.Razor.xml
 D:\Projekty\archiwum_wea\WebArchiwum.WebUI\obj\Debug\WebArchiwum.WebUI.pdb
+=======
+E:\Projects\archiwum_wea\WebArchiwum.WebUI\bin\WebArchiwum.WebUI.dll.config
+E:\Projects\archiwum_wea\WebArchiwum.WebUI\bin\WebArchiwum.WebUI.dll
+E:\Projects\archiwum_wea\WebArchiwum.WebUI\bin\WebArchiwum.WebUI.pdb
+E:\Projects\archiwum_wea\WebArchiwum.WebUI\bin\Antlr3.Runtime.dll
+E:\Projects\archiwum_wea\WebArchiwum.WebUI\bin\Domain.dll
+E:\Projects\archiwum_wea\WebArchiwum.WebUI\bin\EntityFramework.dll
+E:\Projects\archiwum_wea\WebArchiwum.WebUI\bin\EntityFramework.SqlServer.dll
+E:\Projects\archiwum_wea\WebArchiwum.WebUI\bin\Microsoft.Web.Infrastructure.dll
+E:\Projects\archiwum_wea\WebArchiwum.WebUI\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+E:\Projects\archiwum_wea\WebArchiwum.WebUI\bin\Newtonsoft.Json.dll
+E:\Projects\archiwum_wea\WebArchiwum.WebUI\bin\System.Web.Mvc.dll
+E:\Projects\archiwum_wea\WebArchiwum.WebUI\bin\System.Web.Optimization.dll
+E:\Projects\archiwum_wea\WebArchiwum.WebUI\bin\System.Web.Providers.dll
+E:\Projects\archiwum_wea\WebArchiwum.WebUI\bin\System.Web.Razor.dll
+E:\Projects\archiwum_wea\WebArchiwum.WebUI\bin\System.Web.WebPages.Deployment.dll
+E:\Projects\archiwum_wea\WebArchiwum.WebUI\bin\System.Web.WebPages.dll
+E:\Projects\archiwum_wea\WebArchiwum.WebUI\bin\System.Web.WebPages.Razor.dll
+E:\Projects\archiwum_wea\WebArchiwum.WebUI\bin\WebGrease.dll
+E:\Projects\archiwum_wea\WebArchiwum.WebUI\bin\Domain.pdb
+E:\Projects\archiwum_wea\WebArchiwum.WebUI\bin\EntityFramework.xml
+E:\Projects\archiwum_wea\WebArchiwum.WebUI\bin\EntityFramework.SqlServer.xml
+E:\Projects\archiwum_wea\WebArchiwum.WebUI\bin\Newtonsoft.Json.xml
+E:\Projects\archiwum_wea\WebArchiwum.WebUI\bin\System.Web.Mvc.xml
+E:\Projects\archiwum_wea\WebArchiwum.WebUI\bin\System.Web.Razor.xml
+E:\Projects\archiwum_wea\WebArchiwum.WebUI\bin\System.Web.WebPages.xml
+E:\Projects\archiwum_wea\WebArchiwum.WebUI\bin\System.Web.WebPages.Deployment.xml
+E:\Projects\archiwum_wea\WebArchiwum.WebUI\bin\System.Web.WebPages.Razor.xml
+E:\Projects\archiwum_wea\WebArchiwum.WebUI\obj\Debug\WebArchiwum.WebUI.csprojResolveAssemblyReference.cache
+E:\Projects\archiwum_wea\WebArchiwum.WebUI\obj\Debug\WebArchiwum.WebUI.dll
+E:\Projects\archiwum_wea\WebArchiwum.WebUI\obj\Debug\WebArchiwum.WebUI.pdb
+>>>>>>> 759f5513b1ea06ea6c0f236f5124ed9ed0c34aa8
