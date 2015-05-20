@@ -17,10 +17,21 @@ namespace Domain.Core
             Database.SetInitializer<MyDbContext>(new DropCreateDatabaseIfModelChanges<MyDbContext>()); 
         }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            ConfigureYear(modelBuilder);
+        }
+        private void ConfigureYear(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Year>()
+                .HasMany(h => h.Graduates)
+                .WithRequired(w => w.Year)
+                .WillCascadeOnDelete(false);
+        }
 
 
         public DbSet<User> Users { get; set; }
-        public DbSet<Graduate> Graduates { get; set; }
+        //public DbSet<Graduate> Graduates { get; set; }
     }
 
 }

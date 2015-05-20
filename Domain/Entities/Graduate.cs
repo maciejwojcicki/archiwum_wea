@@ -16,5 +16,7 @@ namespace Domain.Entities
         [Required]
         public string LastName { get; set; }
         public string BIO { get; set; }
+
+        public virtual Year Year { get; set; }
     }
 }

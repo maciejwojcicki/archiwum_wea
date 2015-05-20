@@ -60,6 +60,7 @@
     <Compile Include="Core\MyDbContext.cs" />
     <Compile Include="Entities\Graduate.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\Year.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\BaseViewPage.cs" />
     <Compile Include="Security\CustomAuthorizeAttribute.cs" />
