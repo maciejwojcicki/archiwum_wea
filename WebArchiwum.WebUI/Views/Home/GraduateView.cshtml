@@ -1,0 +1,10 @@
+﻿@model IEnumerable<Domain.Entities.Graduate>
+@{
+    ViewBag.Title = "GraduateView";
+}
+
+<h2>GraduateView</h2>
+@foreach ( var item in Model)
+{
+    @Html.DisplayFor(i=>item.FirstName)
+}

@@ -20,16 +20,16 @@ namespace WebArchiwum.WebUI.Controllers
         }
         public ViewResult GraduateView()
         {
-            var model = from c in db.Graduates
+            var model = from c in db.Set<Graduate>()
                         select c;
                         
             return View(model);
         }
         public ViewResult GraduateAdd()
         {
-
+            
             return View();
-        }
+        } 
         [HttpPost]
         public ActionResult GraduateAdd(Graduate graduate)
         {
@@ -39,11 +39,11 @@ namespace WebArchiwum.WebUI.Controllers
 
                 if (graduate.GraduateId == 0)
                 {
-                    db.Graduates.Add(graduate);
+                    db.Set<Graduate>().Add(graduate);
                 }
                 else
                 {
-                    Graduate dbEntry = db.Graduates.Find(graduate.GraduateId);
+                    Graduate dbEntry = db.Set<Graduate>().Find(graduate.GraduateId);
                     if (dbEntry != null)
                     {
                         dbEntry.FirstName = graduate.FirstName;

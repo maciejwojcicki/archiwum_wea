@@ -34,7 +34,6 @@ d:\visual studio 2013\Projects\WebArchiwum\WebArchiwum.WebUI\bin\System.Web.WebP
 d:\visual studio 2013\Projects\WebArchiwum\WebArchiwum.WebUI\obj\Debug\WebArchiwum.WebUI.csprojResolveAssemblyReference.cache
 d:\visual studio 2013\Projects\WebArchiwum\WebArchiwum.WebUI\obj\Debug\WebArchiwum.WebUI.dll
 d:\visual studio 2013\Projects\WebArchiwum\WebArchiwum.WebUI\obj\Debug\WebArchiwum.WebUI.pdb
-
 D:\Projekty\archiwum_wea\WebArchiwum.WebUI\obj\Debug\WebArchiwum.WebUI.csprojResolveAssemblyReference.cache
 D:\Projekty\archiwum_wea\WebArchiwum.WebUI\obj\Debug\WebArchiwum.WebUI.dll
 D:\Projekty\archiwum_wea\WebArchiwum.WebUI\bin\WebArchiwum.WebUI.dll.config
@@ -95,4 +94,3 @@ E:\Projects\archiwum_wea\WebArchiwum.WebUI\bin\System.Web.WebPages.Razor.xml
 E:\Projects\archiwum_wea\WebArchiwum.WebUI\obj\Debug\WebArchiwum.WebUI.csprojResolveAssemblyReference.cache
 E:\Projects\archiwum_wea\WebArchiwum.WebUI\obj\Debug\WebArchiwum.WebUI.dll
 E:\Projects\archiwum_wea\WebArchiwum.WebUI\obj\Debug\WebArchiwum.WebUI.pdb
-
