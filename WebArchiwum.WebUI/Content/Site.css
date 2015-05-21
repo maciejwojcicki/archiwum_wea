@@ -25,34 +25,30 @@
     color:#fff;
 }
 #section1{
+    background:url('/Content/Images/tlo1.png') no-repeat;
+    background-position:right;
     padding-top:50px;
-    background:#f1f1f1
+    background-color:#f1f1f1;
+    min-height:714px;
 }
-#section1 .item{
-    padding-top:200px;
+#section1 .carousel{
+    top:40px;
 }
 #section1 .carousel-control{
     display:none;
 }
-#section1 h1{
-    text-align:right;
-    font-size:120px;
+#section1 .carousel-indicators{
+    bottom:-40px;
 }
-#section1 h2{
-    text-align:right;
-    font-size:70px;
-}
-#section1 h3{
-    text-align:right;
-    font-size:50px;
-}
-#section1 h4{
-    text-align:right;
-    font-size:30px;
+#section1 img{
+    margin:auto;
 }
 #section2{
+    background:url('/Content/Images/tlo2.png') no-repeat;
+    background-position:right;
     margin-top:50px;
-    background:#f1f1f1;
+    background-color:#f1f1f1;
+    min-height:879px;
 }
 #section2 h3{
     margin-bottom:60px;
@@ -91,8 +87,12 @@
     height:100%;
 }
 #section4{
-    background:#f1f1f1;
+    background:url('/Content/Images/tlo3.png') no-repeat;
+    background-position:right;
+    background-color:#f1f1f1;
     margin-top:50px;
+    min-height:707px;
+    display:none;
 }
 #section4 h3{
     margin-bottom:60px;
@@ -102,8 +102,11 @@
     margin-bottom:15px;
 }
 #section5{
-    background:#f1f1f1;
+    background:url('/Content/Images/tlo4.png') no-repeat;
+    background-position:right;
+    background-color:#f1f1f1;
     margin-top:50px;
+    min-height:660px;
 }
 #section5 h3{
     margin-bottom:60px;
