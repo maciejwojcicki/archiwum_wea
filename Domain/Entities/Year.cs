@@ -9,6 +9,10 @@ namespace Domain.Entities
 {
     public class Year
     {
+        public Year()
+        {
+            Graduates = new List<Graduate>();
+        }
         public int YearId { get; set; }
         [Required]
         [Display(Name = "Rok")]
