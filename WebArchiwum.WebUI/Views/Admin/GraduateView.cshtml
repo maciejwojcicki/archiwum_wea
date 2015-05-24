@@ -1,0 +1,27 @@
+﻿@model IEnumerable<WebArchiwum.WebUI.Models.YearAndGraduate>
+@{
+    ViewBag.Title = "Widok absolwentów";
+}
+
+<h2>Widok absolwenta</h2>
+@Html.ActionLink("Nowy absolwent", "GraduateAdd", new { YearId = ViewBag.id })
+<div class="row">
+    <div class="table-div col-sm-10">
+        <div class="table-header row">
+            <div class="col-sm-3"><span>Imie</span></div>
+            <div class="col-sm-3"><span>Nazwisko</span></div>
+            <div class="col-sm-3"><span>Opis</span></div>
+        </div>
+        <div class="table-items">
+            @foreach (var item in Model)
+            {
+                <div class="table-item row">
+                    <div class="col-sm-3"><span>@item.Graduates.FirstName</span></div>
+                    <div class="col-sm-3"><span>@item.Graduates.LastName</span></div>
+                    <div class="col-sm-3"><span>@item.Graduates.BIO</span></div>
+                </div>
+                        
+            }
+        </div>
+    </div>
+</div>

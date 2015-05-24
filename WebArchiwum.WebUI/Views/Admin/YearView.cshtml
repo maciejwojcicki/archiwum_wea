@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Domain.Entities.Year>
+@{
+    ViewBag.Title = "Widok roczników";
+}
+
+<h2>Widok roczników</h2>
+@Html.ActionLink("Nowy rocznik", "YearAdd", new { YearId = ViewBag.id })
+<div class="row">
+    <div class="table-div col-sm-10">
+        <div class="table-header row">
+            <div class="col-sm-1"><span>ROK</span></div>
+        </div>
+        <div class="table-items">
+            @foreach (var item in Model)
+            {
+                <div class="table-item row">
+                    <div class="col-sm-1"> <span>@item.Name</span></div>
+                    <div class="client">@Html.ActionLink("K", "GraduateView", new { item.YearId })</div>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>

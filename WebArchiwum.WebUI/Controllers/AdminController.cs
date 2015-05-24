@@ -49,7 +49,7 @@ namespace WebArchiwum.WebUI.Controllers
                     string userData = JsonConvert.SerializeObject(serializeModel);
                     FormsAuthenticationTicket authTicket = new FormsAuthenticationTicket(
                              1,
-                             user.Email,
+                             "Login",
                              DateTime.Now,
                              DateTime.Now.AddDays(1),
                              false,
@@ -59,7 +59,14 @@ namespace WebArchiwum.WebUI.Controllers
                     string encTicket = FormsAuthentication.Encrypt(authTicket);
                     HttpCookie faCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encTicket);
                     Response.Cookies.Add(faCookie);
-                    return RedirectToAction("Index", "Test");
+                    if(user.Login != null)
+                    {
+                        return RedirectToAction("Index", "Test");
+                    }
+                    else
+                    {
+                        return RedirectToAction("AccountDenied", "Error");
+                    }
                     //Sprawdza aktywność użytkownika
                     //if (user.IsActive == true)
                     //{   //Sprawdza pierwsze logowanie
@@ -141,6 +148,97 @@ namespace WebArchiwum.WebUI.Controllers
                 return View(user);
             }
 
+        }
+
+        public ViewResult YearView()
+        {
+            var model = from c in db.Set<Year>()
+                        select c;
+            return View(model);
+        }
+        public ViewResult YearAdd()
+        {
+
+            return View();
+        }
+        [HttpPost]
+        public ActionResult YearAdd(Year year)
+        {
+            if (ModelState.IsValid)
+            {
+
+                if (year.YearId == 0)
+                {
+                    db.Set<Year>().Add(year);
+                }
+                else
+                {
+                    Year dbEntry = db.Set<Year>().Find(year.YearId);
+                    if (dbEntry != null)
+                    {
+                        dbEntry.Name = year.Name;
+
+                    }
+                }
+                db.SaveChanges();
+                TempData["message"] = string.Format("Zapisano {0} ", year.Name);
+                return RedirectToAction("YearView","Admin");
+            }
+            else
+            {
+                return View(year);
+            }
+        }
+        public ViewResult GraduateView(int YearId)
+        {
+
+            ViewBag.id = YearId;
+            var model = from o in db.Set<Year>()
+                        join o2 in db.Set<Graduate>()
+                        on o.YearId equals o2.YearId
+                        where o.YearId.Equals(YearId)
+                        select new YearAndGraduate { Years = o, Graduates = o2 };
+
+            return View(model);
+        }
+        public ViewResult GraduateAdd(int? YearId)
+        {
+            var model = new YearAndGraduate { Graduates = new Graduate { YearId = YearId } };
+            return View(model);
+        }
+        [HttpPost]
+        public ActionResult GraduateAdd(YearAndGraduate graduate, int? YearId)
+        {
+
+            if (ModelState.IsValid)
+            {
+
+                if (graduate.Graduates.GraduateId == 0)
+                {
+
+                    db.Set<Graduate>().Add(graduate.Graduates);
+                    YearId = graduate.Graduates.YearId;
+                }
+                else
+                {
+                    Graduate dbEntry = db.Set<Graduate>().Find(graduate.Graduates.GraduateId);
+                    if (dbEntry != null)
+                    {
+                        dbEntry.FirstName = graduate.Graduates.FirstName;
+                        dbEntry.LastName = graduate.Graduates.LastName;
+                        dbEntry.BIO = graduate.Graduates.BIO;
+                        dbEntry.YearId = graduate.Graduates.YearId;
+
+                    }
+                }
+                db.SaveChanges();
+                TempData["message"] = string.Format("Zapisano {0} ", graduate.Graduates.FirstName + graduate.Graduates.LastName);
+                return RedirectToAction("GraduateView","Admin", new { YearId });
+            }
+            else
+            {
+                return View(graduate);
+            }
         }
 
 
