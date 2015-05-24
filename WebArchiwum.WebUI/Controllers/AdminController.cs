@@ -189,14 +189,14 @@ namespace WebArchiwum.WebUI.Controllers
                 return View(year);
             }
         }
-        public ViewResult GraduateView(int YearId)
+        public ViewResult GraduateView(int yearId)
         {
 
-            ViewBag.id = YearId;
+            ViewBag.id = yearId;
             var model = from o in db.Set<Year>()
                         join o2 in db.Set<Graduate>()
                         on o.YearId equals o2.YearId
-                        where o.YearId.Equals(YearId)
+                        where o.YearId.Equals(yearId)
                         select new YearAndGraduate { Years = o, Graduates = o2 };
 
             return View(model);
@@ -239,6 +239,23 @@ namespace WebArchiwum.WebUI.Controllers
             {
                 return View(graduate);
             }
+        }
+
+        [HttpPost]
+        public ActionResult GraduateDelete(int GraduateId)
+        {
+
+            Graduate dbEntry = db.Set<Graduate>().Find(GraduateId);
+            var yearId = dbEntry.YearId;
+            if (dbEntry != null)
+            {
+                db.Set<Graduate>().Remove(dbEntry);
+                db.SaveChanges();
+                TempData["message"] = string.Format("Usunięto {0}",  dbEntry.FirstName+dbEntry.LastName);
+            }
+
+            return RedirectToAction("GraduateView","Admin", new { yearId });
+            
         }
 
 
