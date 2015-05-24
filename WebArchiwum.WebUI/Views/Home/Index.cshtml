@@ -96,48 +96,56 @@
 <div id="section3">
     <div class="container">
         <h3>Archiwum</h3>
-        <div class="row items">
-            <div class="col-md-1 col-sm-2 col-xs-4">
-                <div>
-                    1978
-                </div>
+        <div id="archiwum-app">
+            <div class="years row">
+
             </div>
-            <div class="col-md-1 col-sm-2 col-xs-4">
-                <div>
-                    1978
-                </div>
-            </div>
-            <div class="col-md-1 col-sm-2 col-xs-4">
-                <div>
-                    1978
-                </div>
-            </div>
-            <div class="col-md-1 col-sm-2 col-xs-4">
-                <div>
-                    1978
-                </div>
-            </div>
-            <div class="col-md-1 col-sm-2 col-xs-4">
-                <div>
-                    1978
-                </div>
-            </div>
-            <div class="col-md-1 col-sm-2 col-xs-4">
-                <div>
-                    1978
-                </div>
-            </div>
-            <div class="col-md-1 col-sm-2 col-xs-4">
-                <div>
-                    1978
-                </div>
-            </div>
-            <div class="col-md-1 col-sm-2 col-xs-4">
-                <div>
-                    1978
-                </div>
+            <div class="graduates row">
+
             </div>
         </div>
+        @*<div class="row items">
+            <div class="col-md-1 col-sm-2 col-xs-4">
+                <div>
+                    1978
+                </div>
+            </div>
+            <div class="col-md-1 col-sm-2 col-xs-4">
+                <div>
+                    1978
+                </div>
+            </div>
+            <div class="col-md-1 col-sm-2 col-xs-4">
+                <div>
+                    1978
+                </div>
+            </div>
+            <div class="col-md-1 col-sm-2 col-xs-4">
+                <div>
+                    1978
+                </div>
+            </div>
+            <div class="col-md-1 col-sm-2 col-xs-4">
+                <div>
+                    1978
+                </div>
+            </div>
+            <div class="col-md-1 col-sm-2 col-xs-4">
+                <div>
+                    1978
+                </div>
+            </div>
+            <div class="col-md-1 col-sm-2 col-xs-4">
+                <div>
+                    1978
+                </div>
+            </div>
+            <div class="col-md-1 col-sm-2 col-xs-4">
+                <div>
+                    1978
+                </div>
+            </div>
+        </div>*@
     </div>
 </div>
 <div id="section4">
@@ -242,9 +250,30 @@
             <div class="col-md-1">
                 Mike :)
             </div>
+            <div class="col-md-1">
+                Darek :P
+            </div>
         </div>
     </div>
 </div>
+
+<script type="text/template" id="year-view-template">
+    <div class="col-md-1 col-sm-2 col-xs-4 year" data-idy="<%=YearId%>">
+        <div>
+            <%=Name%>
+        </div>
+    </div>
+</script>
+<script type="text/template" id="graduate-view-template">
+    <div class="col-md-1 col-sm-2 col-xs-4 year">
+        <div>
+            <%=FirstName%>
+            <%=LastName%>
+        </div>
+    </div>
+</script>
+
+
 <script>
     $(function () {
         $('.head-link').click(function (e) {
@@ -258,4 +287,10 @@
         });
     })
     
+</script>
+<script type="text/javascript" src="@Url.Content("~/scripts/bb-archiwum.js")"></script>
+<script type="text/javascript">
+        (function () {
+            new archiwum.app({});
+        })();
 </script>
