@@ -2,10 +2,11 @@
 
 @{
     ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_layout.cshtml";
 }
 
 <h2>Register</h2>
-@using (Html.BeginForm("Register", "Account"))
+@using (Html.BeginForm("Register", "Admin"))
 {
 @Html.LabelFor(p=>p.Login)
 @Html.TextBoxFor(p => p.Login)   

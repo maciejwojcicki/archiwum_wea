@@ -1,0 +1,27 @@
+﻿@model Domain.Entities.Year
+@{
+    ViewBag.Title = "Dodawanie roku";
+}
+
+<h2>Dodawanie rocznika</h2>
+@using (Html.BeginForm("YearAdd", "Admin"))
+{
+    <div class="row">
+        <div class="left col-sm-4">
+            <div class="editor-label">
+                @Html.LabelFor(p => p.Name)
+             </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(p => p.Name)
+                @Html.ValidationMessageFor(p => p.Name)
+            </div>
+
+                <div class="row form-buttons">
+                    <input type="submit" value="Zapisz" />
+                    <div class="cancel-button">
+                        @Html.ActionLink("Anuluj", "YearView")
+                    </div>
+                </div>
+            </div>
+    </div>
+}
