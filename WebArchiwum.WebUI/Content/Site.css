@@ -67,16 +67,17 @@
     margin-bottom:60px;
     margin-top:60px;
 }
-#section3 .items> div{
+#section3 .years div.year{
     position:relative;
+    margin-bottom:30px;
 }
-#section3 .items> div:before{
+#section3 .years div.year:before{
     content:"";
     display:block;
     padding-top:100%;
     background:#f7921e;
 }
-#section3 .items div div{
+#section3 .years div.year div{
      width: 50%;
       height: 50%;
       overflow: auto;

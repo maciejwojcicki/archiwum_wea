@@ -20,5 +20,41 @@ namespace WebArchiwum.WebUI.Controllers
             return View();
         }
 
+        [Ajax]
+        public ActionResult AppModel()
+        {
+            var model = from c in db.Set<Year>()
+                        orderby c.Name
+                        select c;
+
+            var data = new
+            {
+                Years = model.Select(m => new
+                {
+                    Name = m.Name,
+                    YearId = m.YearId
+                })
+            };
+            return Json(data, JsonRequestBehavior.AllowGet);
+        }
+        public ActionResult Graduates(int YearId)
+        {
+            var model = from o in db.Set<Year>()
+                        join o2 in db.Set<Graduate>()
+                        on o.YearId equals o2.YearId
+                        where o.YearId.Equals(YearId)
+                        select new YearAndGraduate { Years = o, Graduates = o2 };
+
+            var data = new
+            {
+                graduates = model.Select(m=> new
+                {
+                    FirstName = m.Graduates.FirstName,
+                    LastName = m.Graduates.LastName
+                })
+            };
+            return Json(data, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }
