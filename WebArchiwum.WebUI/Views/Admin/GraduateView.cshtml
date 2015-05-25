@@ -19,24 +19,27 @@
                     <div class="col-sm-3"><span>@item.Graduates.FirstName</span></div>
                     <div class="col-sm-3"><span>@item.Graduates.LastName</span></div>
                     <div class="col-sm-3"><span>@item.Graduates.BIO</span></div>
+                    <div class="glyphicon-edit">@Html.ActionLink("E", "GraduateEdit", new {item.Graduates.GraduateId })</div>
                 </div>
-        <div class="col-sm-6 actions btn2">
-            <span>
-                <div>
-                    <div class="delete">
-                        @using (@Html.BeginForm("GraduateDelete", "Admin"))
-                          {
-                            @Html.Hidden("GraduateId", item.Graduates.GraduateId)
-                            @Html.Hidden("YearId", item.Years.YearId)
-                            <input type="submit" value="Usuń" />
-                          }
-                    </div>
+                <div class="col-sm-6 actions btn2">
+                    <span>
+                        <div>
+                            <div class="delete">
+                                @using (@Html.BeginForm("GraduateDelete", "Admin"))
+                                  {
+                                    @Html.Hidden("GraduateId", item.Graduates.GraduateId)
+                                    @Html.Hidden("YearId", item.Years.YearId)
+                                    <input type="submit" value="Usuń" />
+                                  }
+                            </div>
+                        </div>
+                    </span>
                 </div>
-            </span>
-        </div>
 
 
             }
-                </div>
+
+            @Html.ActionLink("Anuluj", "YearView")
+      </div>
     </div>
 </div>

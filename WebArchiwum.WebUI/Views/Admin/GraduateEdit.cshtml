@@ -1,0 +1,42 @@
+﻿@model Domain.Entities.Graduate
+@{
+    ViewBag.Title = "edycja absolwenta";
+}
+
+<h2>Dodawanie absolwenta</h2>
+@using (Html.BeginForm("GraduateEdit", "Admin"))
+{
+    <div class="row">
+        <div class="middle col-sm-4">
+           @Html.HiddenFor(p=>p.GraduateId)
+           @Html.HiddenFor(p => p.YearId)
+            <div class="editor-label">
+                @Html.LabelFor(p => p.FirstName)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(p => p.FirstName)
+                @Html.ValidationMessageFor(p => p.FirstName)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(p => p.LastName)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(p => p.LastName)
+                @Html.ValidationMessageFor(p => p.LastName)
+            </div>
+            <div class="editor-field">
+                @Html.LabelFor(p => p.BIO)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(p => p.BIO)
+                @Html.ValidationMessageFor(p => p.BIO)
+            </div>
+            <div class="row form-buttons">
+                <input type="submit" value="Zapisz" />
+                <div class="cancel-button">
+                    @Html.ActionLink("Anuluj", "YearView")
+                </div>
+            </div>
+        </div>
+    </div>
+}
