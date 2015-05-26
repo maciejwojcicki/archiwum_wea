@@ -10,6 +10,7 @@ namespace WebArchiwum.WebUI
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js",
+                        "~/Scripts/underscore.js",
                         "~/Scripts/underscore-min.js",
                         "~/Scripts/backbone-min.js"));
 
