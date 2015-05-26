@@ -161,6 +161,7 @@ namespace WebArchiwum.WebUI.Controllers
 
             return View();
         }
+        
         [HttpPost]
         public ActionResult YearAdd(Year year)
         {
@@ -189,9 +190,46 @@ namespace WebArchiwum.WebUI.Controllers
                 return View(year);
             }
         }
+
+        public ViewResult YearEdit(int YearId)
+        {
+            Year model = db.Set<Year>().ToList()
+                .SingleOrDefault(p => p.YearId == YearId);
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult YearEdit(Year year)
+        {
+            if (ModelState.IsValid)
+            {
+
+                if (year.YearId == 0)
+                {
+                    db.Set<Year>().Add(year);
+                }
+                else
+                {
+                    Year dbEntry = db.Set<Year>().Find(year.YearId);
+                    if (dbEntry != null)
+                    {
+                        dbEntry.Name = year.Name;
+
+                    }
+                }
+                db.SaveChanges();
+                TempData["message"] = string.Format("Zapisano {0} ", year.Name);
+                return RedirectToAction("YearView", "Admin");
+            }
+            else
+            {
+                return View(year);
+            }
+        }
+
         public ViewResult GraduateView(int yearId)
         {
-
+            ViewBag.yearr = ViewBag.year;
             ViewBag.id = yearId;
             var model = from o in db.Set<Year>()
                         join o2 in db.Set<Graduate>()
@@ -232,8 +270,46 @@ namespace WebArchiwum.WebUI.Controllers
                     }
                 }
                 db.SaveChanges();
-                TempData["message"] = string.Format("Zapisano {0} ", graduate.Graduates.FirstName + graduate.Graduates.LastName);
+                TempData["message"] = string.Format("Zapisano {0} ", graduate.Graduates.FirstName +" "+ graduate.Graduates.LastName);
                 return RedirectToAction("GraduateView","Admin", new { YearId });
+            }
+            else
+            {
+                return View(graduate);
+            }
+        }
+        public ViewResult GraduateEdit(int GraduateId)
+        {
+            
+            Graduate model = db.Set<Graduate>().ToList()
+                .SingleOrDefault(p => p.GraduateId == GraduateId);
+            return View(model);
+        }
+        [HttpPost]
+        public ActionResult GraduateEdit(Graduate graduate, int? YearId)
+        {
+
+            if (ModelState.IsValid)
+            {
+
+                if (graduate.GraduateId == 0)
+                {
+                    db.Set<Graduate>().Add(graduate);
+                }
+                else
+                {
+                    Graduate dbEntry = db.Set<Graduate>().Find(graduate.GraduateId);
+                    if (dbEntry != null)
+                    {
+                        dbEntry.FirstName = graduate.FirstName;
+                        dbEntry.LastName = graduate.LastName;
+                        dbEntry.BIO = graduate.BIO;
+
+                    }
+                }
+                db.SaveChanges();
+                TempData["message"] = string.Format("Zapisano {0} ", graduate.FirstName +" "+ graduate.LastName);
+                return RedirectToAction("GraduateView", "Admin", new { YearId });
             }
             else
             {
@@ -256,6 +332,36 @@ namespace WebArchiwum.WebUI.Controllers
 
             return RedirectToAction("GraduateView","Admin", new { yearId });
             
+        }
+
+        [HttpPost]
+        public ActionResult YearDelete(int yearId)
+        {
+            var model = from o in db.Set<Year>()
+                        join o2 in db.Set<Graduate>()
+                        on o.YearId equals o2.YearId
+                        where o.YearId.Equals(yearId)
+                        select new YearAndGraduate { Years = o, Graduates = o2 };
+            if (model.Count() > 0)
+            {
+                return View("YearErrorView");
+            }
+            else
+            {
+                Year dbEntry = db.Set<Year>().Find(yearId);
+                if (dbEntry != null)
+                {
+                    db.Set<Year>().Remove(dbEntry);
+                    db.SaveChanges();
+                    TempData["message"] = string.Format("Usunięto {0}", dbEntry.Name);
+                }
+                return RedirectToAction("YearView", "Admin");
+            }
+        }
+
+        public ActionResult YearErrorView()
+        {
+            return View();
         }
 
 

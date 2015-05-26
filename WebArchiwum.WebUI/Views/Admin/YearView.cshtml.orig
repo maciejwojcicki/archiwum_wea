@@ -7,7 +7,10 @@
 @Html.ActionLink("Nowy rocznik", "YearAdd", new { YearId = ViewBag.id })
 <div class="container">
     <div class="row">
+<<<<<<< HEAD
+=======
         @ViewBag.year
+>>>>>>> c7d16fcae2c74c0c0fb1955824459a3ccd8c52d0
         <div class="table-div col-sm-10">
             <div class="table-header row">
                 <div class="col-sm-1"><span>ROK</span></div>
@@ -16,6 +19,10 @@
                 @foreach (var item in Model)
                 {
                     <div class="table-item row">
+<<<<<<< HEAD
+                        <div class="col-sm-1"> <span>@item.Name</span></div>
+                        <div class="client">@Html.ActionLink("K", "GraduateView", new { item.YearId })</div>
+=======
                         <div class="col-md-4"> <span>@item.Name</span></div>
                         <div class="glyphicon-edit">@Html.ActionLink("E", "YearEdit", new { item.YearId })</div>
                         <div class="glyphicon-edit">@Html.ActionLink("K", "GraduateView", new { item.YearId }) </div>
@@ -29,6 +36,7 @@
                                 <input type="submit" value="Usuń" />
                             }
                         </div>
+>>>>>>> c7d16fcae2c74c0c0fb1955824459a3ccd8c52d0
                     </div>
                 }
 
