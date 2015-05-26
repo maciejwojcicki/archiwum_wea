@@ -6,15 +6,16 @@
 <h2>Dodawanie rocznika</h2>
 @using (Html.BeginForm("YearAdd", "Admin"))
 {
-    <div class="row">
-        <div class="left col-sm-4">
-            <div class="editor-label">
-                @Html.LabelFor(p => p.Name)
-             </div>
-            <div class="editor-field">
-                @Html.TextBoxFor(p => p.Name)
-                @Html.ValidationMessageFor(p => p.Name)
-            </div>
+    <div class="container">
+        <div class="row">
+            <div class="left col-sm-4">
+                <div class="editor-label">
+                    @Html.LabelFor(p => p.Name)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(p => p.Name)
+                    @Html.ValidationMessageFor(p => p.Name)
+                </div>
 
                 <div class="row form-buttons">
                     <input type="submit" value="Zapisz" />
@@ -23,5 +24,6 @@
                     </div>
                 </div>
             </div>
+        </div>
     </div>
 }
