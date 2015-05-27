@@ -1,5 +1,4 @@
-﻿@model WebArchiwum.WebUI.Models.RegisterModel
-
+﻿@model Domain.Entities.User
 @{
     ViewBag.Title = "Register";
     Layout = "~/Views/Shared/_layout.cshtml";
@@ -10,7 +9,6 @@
 {
 @Html.LabelFor(p=>p.Login)
 @Html.TextBoxFor(p => p.Login)   
-@ViewBag.CodeContract
 @Html.ValidationMessageFor(x => x.Login)
     
 @Html.LabelFor(p => p.Password)

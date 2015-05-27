@@ -6,14 +6,14 @@ using System.Web.Mvc;
 
 namespace WebArchiwum.WebUI.Controllers
 {
-    public class TestController : BaseController
+    public class TestController : Controller
     {
         //
         // GET: /Test/
 
         public ActionResult Index()
         {
-            ViewBag.User = User.Login;
+            
             return View();
         }
 

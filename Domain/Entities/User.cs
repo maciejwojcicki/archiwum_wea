@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,9 @@ namespace Domain.Entities
         [Required]
         [RegularExpression(@"[a-zA-Z0-9]{6,}")]
         public string Password { get; set; }
-        public string Email { get; set; }
+
+        [NotMapped]
+        [Compare("Password")]
+        public string ConfirmPassword { get; set; }
     }
 }

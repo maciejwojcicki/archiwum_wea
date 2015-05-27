@@ -1,8 +1,9 @@
 ﻿@model IEnumerable<Domain.Entities.Year>
 @{
     ViewBag.Title = "Widok roczników";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-
+Witaj, @ViewBag.a
 <h2>Widok roczników</h2>
 @Html.ActionLink("Nowy rocznik", "YearAdd", new { YearId = ViewBag.id })
 <div class="container">

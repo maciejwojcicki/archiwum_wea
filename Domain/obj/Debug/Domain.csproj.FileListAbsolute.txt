@@ -25,4 +25,3 @@ E:\Projects\archiwum_wea\Domain\bin\Debug\EntityFramework.xml
 E:\Projects\archiwum_wea\Domain\bin\Debug\EntityFramework.SqlServer.xml
 E:\Projects\archiwum_wea\Domain\obj\Debug\Domain.dll
 E:\Projects\archiwum_wea\Domain\obj\Debug\Domain.pdb
-D:\Projekty\archiwum_wea\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache

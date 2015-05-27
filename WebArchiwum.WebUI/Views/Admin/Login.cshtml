@@ -1,4 +1,4 @@
-﻿@model WebArchiwum.WebUI.Models.LoginViewModel
+﻿@model Domain.Entities.User
 
 @{
     ViewBag.Title = "Index";
@@ -9,7 +9,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-
+    @Html.HiddenFor(p=>p.UserId)
     <div class="form-horizontal login-form">
         <div class="row">
             <div class="col-sm-4 header"><h1>Logowanie</h1></div>
@@ -22,10 +22,10 @@
             <div class="col-sm-6">
                 <div class="col-sm-6 input-group">
                     <span class="input-group-addon glyphicon glyphicon-user"></span>
-                    @Html.TextBoxFor(model => model.Username, new { @class = "form-control", @placeholder = "użytkownik" })
+                    @Html.TextBoxFor(model => model.Login, new { @class = "form-control", @placeholder = "użytkownik" })
                 </div>
                 <div class="col-sm-6">
-                    @Html.ValidationMessageFor(model => model.Username)
+                    @Html.ValidationMessageFor(model => model.Login)
                 </div>
             </div>
         </div>

@@ -6,22 +6,22 @@ using System.Web;
 
 namespace WebArchiwum.WebUI.Models
 {
-    public class LoginViewModel
+    public class LoginModel
     {   //Logowanie
 
         /// <summary>
         /// Użytkownik
         /// </summary>
         [Required]
-        [Display(Name = "użytkownik")]
-        public string Username { get; set; }
+        [Display(Name = "Login")]
+        public string Login { get; set; }
 
         /// <summary>
         /// Hasło
         /// </summary>
         [Required]
-        [DataType(DataType.Password)]
-        [Display(Name = "hasło")]
+        [RegularExpression(@"[a-zA-Z0-9]{6,}")]
+        [Display(Name = "Hasło")]
         public string Password { get; set; }
 
     }

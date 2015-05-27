@@ -7,133 +7,87 @@ using System.Web.Mvc;
 using WebArchiwum.WebUI.Models;
 using Domain.Utils;
 using Domain.Core;
-using Domain.Security;
 using Newtonsoft.Json;
 using System.Web.Security;
+using WebArchiwum.WebUI.Service;
+using WebArchiwum.WebUI.Interface;
 
 namespace WebArchiwum.WebUI.Controllers
 {
-    public class AdminController : BaseController
+    
+    public class AdminController : Controller
     {
+        IUserService userService = null;
+        public AdminController()
+        {
+            userService = new UserService();
+        }
 
         MyDbContext db = new MyDbContext();
         UserUtils userUtils = new UserUtils();
         //
         // GET: /Admin/
-
+        [AllowAnonymous]
         public ViewResult Login()
         {
             return View();
         }
-
-    
+        [AllowAnonymous]
         [HttpPost]
-        public ActionResult Login(LoginViewModel model, string returnUrl = "")
+        public ActionResult Login(User model)
         {
-            //Sprawdza walidacje danych po stornie db.
-            if (ModelState.IsValid)
-            {   //Pobiera użytkowniak
-                var password = userUtils.PasswordHash(model.Password);
-                var user = db.Users.Where(u => u.Login == model.Username && u.Password == password).FirstOrDefault();
-                if (user != null)
-                {   //Sprawdza role
-                    //var roles = user.Roles.Select(m => m.RoleName).ToArray();
-
-                    CustomPrincipalSerializeModel serializeModel = new CustomPrincipalSerializeModel();
-                    serializeModel.UserId = user.UserId;
-                    serializeModel.FirstName = user.Login;
-                    serializeModel.LastName = user.Password;
-                    //serializeModel.IsActive = user.IsActive;
-                    //serializeModel.roles = roles;
-
-                    string userData = JsonConvert.SerializeObject(serializeModel);
-                    FormsAuthenticationTicket authTicket = new FormsAuthenticationTicket(
-                             1,
-                             "Login",
-                             DateTime.Now,
-                             DateTime.Now.AddDays(1),
-                             false,
-                             userData);
-                  
-                    //Ustawia ciasteczko
-                    string encTicket = FormsAuthentication.Encrypt(authTicket);
-                    HttpCookie faCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encTicket);
-                    Response.Cookies.Add(faCookie);
-                    if(user.Login != null)
-                    {
-                        return RedirectToAction("Index", "Test");
-                    }
-                    else
-                    {
-                        return RedirectToAction("AccountDenied", "Error");
-                    }
-                    //Sprawdza aktywność użytkownika
-                    //if (user.IsActive == true)
-                    //{   //Sprawdza pierwsze logowanie
-                    //    if (user.IsChange == true )
-                    //    {   //Sprawdza 30 dni do zmiany hasła
-                    //        if (DateTime.UtcNow.DayOfYear - user.ExpirationDate.DayOfYear < 30)
-                    //        {   
-                    //            if (roles.Contains("Admin"))
-                    //            {
-                    //                return RedirectToAction("ViewUsers", "Administrator");
-                    //            }
-                    //            else if (roles.Contains("Umowa"))
-                    //            {
-                    //                return RedirectToAction("Index", "Contract");
-                    //            }
-                    //            else if (roles.Contains("Zgłoszenia"))
-                    //            {
-                    //                return RedirectToAction("Index", "Task");
-                    //            }
-                    //            else if (roles.Contains("Klient"))
-                    //            {
-                    //                return RedirectToAction("Index", "Client");
-                    //            }
-                    //            else
-                    //            {
-                    //                return RedirectToAction("AccessDenied", "Error");
-                    //            }
-                    //        }
-                    //        else
-                    //        {
-                    //            return RedirectToAction("ChangePassword", "Account", new { user.UserId });
-                    //        }
-                    //    }
-                    //    else
-                    //    {
-                    //        return RedirectToAction("ChangePassword", "Account", new { user.UserId});
-                    //    }
-                    //}
-                    //else
-                    //{
-                    //    return RedirectToAction("AccountDenied", "Error");
-                    //}
-                }
-
-                ModelState.AddModelError("", "Nieprawidłowy użytkownik lub hasło");
+            
+            int userId = 0;
+            try
+            {
+                userId = userService.Login(model);
+            }
+            catch (Exceptions.AccountNotActivatedException)
+            {
+                return RedirectToAction("Index", "Error");
+                //return Json(JsonReturns.Redirect("/User/AccountNotActivated"), JsonRequestBehavior.AllowGet);
             }
 
-            return View(model);
+            var authTicket = new FormsAuthenticationTicket(
+                1,
+                userId.ToString(),
+                DateTime.Now,
+                DateTime.Now.AddMinutes(1440),
+                true,
+                "",
+                FormsAuthentication.FormsCookiePath);
+            string encTicket = FormsAuthentication.Encrypt(authTicket);
+            HttpCookie authCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encTicket);
+            Response.Cookies.Add(authCookie);
+
+            return RedirectToAction("YearView","Admin");
         }
 
+        
+        [Authorize]
         [HttpGet]
         public ViewResult Register()
         {
             return View();
         }
 
-
+        [Authorize]
         [HttpPost]
         public ActionResult Register(User user)
         {
             if (ModelState.IsValid)
             {
 
-                if (user.UserId == 0)
+                if (user.UserId == 0 && db.Users.Where(p=>p.Login.ToLower() == user.Login.ToLower()).Count()==0)
                 {
                     user.Password = userUtils.PasswordHash(user.Password);
-                    db.Users.Add(user);
+                    var register = db.Users.Create();
+                    register.UserId = user.UserId;
+                    register.Login = user.Login;
+                    register.Password = user.Password;
+                    register.ConfirmPassword = user.Password;
+
+                    db.Users.Add(register);
                 }
                 else
                 {
@@ -149,19 +103,21 @@ namespace WebArchiwum.WebUI.Controllers
             }
 
         }
-
+        [Authorize]
         public ViewResult YearView()
         {
             var model = from c in db.Set<Year>()
                         select c;
+            ViewBag.a = userService.GetCurrentUser(User).Login;
             return View(model);
         }
+        [Authorize]
         public ViewResult YearAdd()
         {
 
             return View();
         }
-        
+        [Authorize]
         [HttpPost]
         public ActionResult YearAdd(Year year)
         {
@@ -190,14 +146,14 @@ namespace WebArchiwum.WebUI.Controllers
                 return View(year);
             }
         }
-
+        [Authorize]
         public ViewResult YearEdit(int YearId)
         {
             Year model = db.Set<Year>().ToList()
                 .SingleOrDefault(p => p.YearId == YearId);
             return View(model);
         }
-
+        [Authorize]
         [HttpPost]
         public ActionResult YearEdit(Year year)
         {
@@ -226,7 +182,7 @@ namespace WebArchiwum.WebUI.Controllers
                 return View(year);
             }
         }
-
+        [Authorize]
         public ViewResult GraduateView(int yearId)
         {
             ViewBag.yearr = ViewBag.year;
@@ -239,11 +195,13 @@ namespace WebArchiwum.WebUI.Controllers
 
             return View(model);
         }
+        [Authorize]
         public ViewResult GraduateAdd(int? YearId)
         {
             var model = new YearAndGraduate { Graduates = new Graduate { YearId = YearId } };
             return View(model);
         }
+        [Authorize]
         [HttpPost]
         public ActionResult GraduateAdd(YearAndGraduate graduate, int? YearId)
         {
@@ -278,6 +236,7 @@ namespace WebArchiwum.WebUI.Controllers
                 return View(graduate);
             }
         }
+        [Authorize]
         public ViewResult GraduateEdit(int GraduateId)
         {
             
@@ -285,6 +244,7 @@ namespace WebArchiwum.WebUI.Controllers
                 .SingleOrDefault(p => p.GraduateId == GraduateId);
             return View(model);
         }
+        [Authorize]
         [HttpPost]
         public ActionResult GraduateEdit(Graduate graduate, int? YearId)
         {
@@ -316,7 +276,7 @@ namespace WebArchiwum.WebUI.Controllers
                 return View(graduate);
             }
         }
-
+        [Authorize]
         [HttpPost]
         public ActionResult GraduateDelete(int GraduateId)
         {
@@ -333,7 +293,7 @@ namespace WebArchiwum.WebUI.Controllers
             return RedirectToAction("GraduateView","Admin", new { yearId });
             
         }
-
+        [Authorize]
         [HttpPost]
         public ActionResult YearDelete(int yearId)
         {

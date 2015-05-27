@@ -100,3 +100,9 @@ E:\Projects\archiwum_wea\WebArchiwum.WebUI\bin\System.Web.Http.WebHost.dll
 E:\Projects\archiwum_wea\WebArchiwum.WebUI\bin\System.Net.Http.Formatting.xml
 E:\Projects\archiwum_wea\WebArchiwum.WebUI\bin\System.Web.Http.xml
 E:\Projects\archiwum_wea\WebArchiwum.WebUI\bin\System.Web.Http.WebHost.xml
+D:\Projekty\archiwum_wea\WebArchiwum.WebUI\bin\System.Net.Http.Formatting.dll
+D:\Projekty\archiwum_wea\WebArchiwum.WebUI\bin\System.Web.Http.dll
+D:\Projekty\archiwum_wea\WebArchiwum.WebUI\bin\System.Web.Http.WebHost.dll
+D:\Projekty\archiwum_wea\WebArchiwum.WebUI\bin\System.Net.Http.Formatting.xml
+D:\Projekty\archiwum_wea\WebArchiwum.WebUI\bin\System.Web.Http.xml
+D:\Projekty\archiwum_wea\WebArchiwum.WebUI\bin\System.Web.Http.WebHost.xml
