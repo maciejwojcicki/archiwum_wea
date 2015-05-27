@@ -1,0 +1,53 @@
+﻿@model WebArchiwum.WebUI.Models.LoginViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_layout.cshtml";
+
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal login-form">
+        <div class="row">
+            <div class="col-sm-4 header"><h1>Logowanie</h1></div>
+        </div>
+        @Html.ValidationSummary(true)
+
+
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="col-sm-6 input-group">
+                    <span class="input-group-addon glyphicon glyphicon-user"></span>
+                    @Html.TextBoxFor(model => model.Username, new { @class = "form-control", @placeholder = "użytkownik" })
+                </div>
+                <div class="col-sm-6">
+                    @Html.ValidationMessageFor(model => model.Username)
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="col-sm-6 input-group">
+                    <span class="input-group-addon glyphicon glyphicon-asterisk"></span>
+                    @Html.TextBoxFor(model => model.Password, new { @class = "form-control", @type = "password", @placeholder = "hasło" })
+                </div>
+                <div class="col-sm-6">
+                    @Html.ValidationMessageFor(model => model.Password)
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <div class="col-sm-3">
+                    <input type="submit" value="Zaloguj" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+

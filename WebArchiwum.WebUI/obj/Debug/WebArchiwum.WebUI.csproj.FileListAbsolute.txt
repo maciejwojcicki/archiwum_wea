@@ -94,3 +94,9 @@ E:\Projects\archiwum_wea\WebArchiwum.WebUI\bin\System.Web.WebPages.Razor.xml
 E:\Projects\archiwum_wea\WebArchiwum.WebUI\obj\Debug\WebArchiwum.WebUI.csprojResolveAssemblyReference.cache
 E:\Projects\archiwum_wea\WebArchiwum.WebUI\obj\Debug\WebArchiwum.WebUI.dll
 E:\Projects\archiwum_wea\WebArchiwum.WebUI\obj\Debug\WebArchiwum.WebUI.pdb
+E:\Projects\archiwum_wea\WebArchiwum.WebUI\bin\System.Net.Http.Formatting.dll
+E:\Projects\archiwum_wea\WebArchiwum.WebUI\bin\System.Web.Http.dll
+E:\Projects\archiwum_wea\WebArchiwum.WebUI\bin\System.Web.Http.WebHost.dll
+E:\Projects\archiwum_wea\WebArchiwum.WebUI\bin\System.Net.Http.Formatting.xml
+E:\Projects\archiwum_wea\WebArchiwum.WebUI\bin\System.Web.Http.xml
+E:\Projects\archiwum_wea\WebArchiwum.WebUI\bin\System.Web.Http.WebHost.xml
