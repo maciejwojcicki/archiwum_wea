@@ -91,6 +91,7 @@ namespace WebArchiwum.WebUI.Controllers
                 }
                 else
                 {
+                    ViewBag.Blad = "Login taki jest już zajęty";
                     return View(user);
                 }
                 db.SaveChanges();
